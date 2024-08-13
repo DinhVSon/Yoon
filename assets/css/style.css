@@ -1,0 +1,999 @@
+/*------------------------------ Start Header ---------------------------*/
+header {
+  z-index: 9999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+header .container {
+  height: 70px;
+  margin: 0;
+}
+header .container .innerWrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: var(--bgTwo);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*--- logo---- */
+
+header .container .innerWrap .innerLogo {
+  width: 10%;
+  padding-left: 20px;
+}
+header .container .innerWrap .innerLogo img {
+  width: 60px;
+  height: 60px;
+}
+
+/*--- nav-menu ---*/
+
+header .container .innerWrap .menu {
+  width: 75%;
+  display: flex;
+}
+header .container .innerWrap .menu label,
+.menu input {
+  display: none;
+}
+header .container .innerWrap .menu nav {
+  width: 100%;
+}
+header .container .innerWrap .menu nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+header .container .innerWrap .menu ul li a {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/*----search ----*/
+
+header .container .innerWrap .search {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .container .innerWrap .search #S {
+  display: none;
+}
+header .container .innerWrap .search form {
+  display: none;
+  position: relative;
+}
+header .container .innerWrap .search form input {
+  width: 160px;
+  height: 2em;
+  border-radius: 20px;
+  padding: 1em;
+}
+header .container .innerWrap .search form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 5px;
+  z-index: 9999;
+}
+header .container .innerWrap .search .la1 {
+  position: absolute;
+  right: 30px;
+}
+header .container .innerWrap .search form .la2 {
+  position: absolute;
+  left: -15px;
+  top: -10px;
+}
+header .container .innerWrap .search form #S {
+  display: none;
+}
+header .container .innerWrap .search #S:checked ~ form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container .innerWrap .search #S:checked ~ .la1 {
+  display: none;
+}
+
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+
+@media screen and (max-width: 1024px) {
+  header .container .innerWrap .search form {
+    margin-right: 1em;
+  }
+  header .container .innerWrap .search form input {
+    width: 130px;
+  }
+  header .container .innerWrap .menu ul li a {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+}
+
+/* --------------------------max width 768px --------------------------*/
+
+@media screen and (max-width: 768px) {
+  header .container .innerWrap .innerLogo {
+    width: calc(100% / 3);
+    order: 2;
+    text-align: center;
+  }
+  header .container .innerWrap .search {
+    order: 3;
+    width: 20%;
+  }
+  header .container .innerWrap .menu {
+    width: calc(100% / 3);
+    display: block;
+  }
+  header .container .innerWrap .menu nav {
+    display: none;
+  }
+  header .container .innerWrap .menu label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 1em;
+    position: relative;
+    order: 1;
+  }
+  header .container .innerWrap .menu label span::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+  }
+  header .container .innerWrap .menu label span::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+  }
+  header .container .innerWrap .menu label span,
+  span::before,
+  span::after {
+    display: block;
+    width: 30px;
+    height: 6px;
+    background-color: var(--colorTwo);
+  }
+  header .container .innerWrap .menu #M:checked ~ nav {
+    display: flex;
+  }
+  header .container .innerWrap .menu #M:checked ~ nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    top: 70px;
+    border: 5px solid black;
+    background-color: var(--bgTwo);
+    line-height: 2em;
+  }
+  header .container .innerWrap .menu #M:checked ~ nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  header .container .innerWrap .menu #M:checked ~ nav ul li a {
+    display: block;
+    width: 100%;
+    color: var(--colorThree);
+    font-weight: 0;
+    font-size: 1em;
+  }
+  header .container .innerWrap .menu #M:checked ~ nav ul li a:hover {
+    background-color: var(--bgOne);
+    color: var(--colorTwo);
+  }
+  header .container .innerWrap .search {
+    width: calc(100% / 3);
+  }
+  header .container .innerWrap .search form input {
+    width: 110px;
+  }
+}
+/*---------------------------- End Header ---------------------------*/
+
+/*--------------------------------------------------- Start Main --------------------------------------------*/
+
+/*--------------------------- Start Intro --------------------------*/
+.intro .container {
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  z-index: 1001;
+}
+.intro .container .innerWrap {
+  background-color: transparent;
+  position: relative;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+.intro .container .innerWrap .introVideo {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.intro .container .innerWrap .innerContent {
+  height: 100%;
+  color: var(--colorThree);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro .container .innerWrap .innerContent h1 {
+  font-size: 3em;
+}
+
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+@media screen and (max-width: 1024px) {
+  .intro .container {
+    height: 500px;
+  }
+  .intro .container .innerWrap .innerContent h1 {
+    font-size: 2em;
+  }
+}
+
+/* --------------------------max width 768px --------------------------*/
+
+@media screen and (max-width: 768px) {
+  .intro .container {
+    height: 400px;
+  }
+  .intro .container .innerWrap .innerContent h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* --------------------------max width 480px --------------------------*/
+
+@media screen and (max-width: 480px) {
+  .intro .container {
+    height: 170px;
+  }
+  .intro .container .innerWrap .innerContent h1 {
+    font-size: 1em;
+  }
+}
+
+/*---------------------------------------------- End Intro ------------------------------------------*/
+
+/*------------------------------------------Start SectionOne --------------------------------------*/
+
+.sectionOne .container .innerWrap {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.sectionOne .container .innerWrap .innerContent::after {
+  content: "";
+  width: 425px;
+  height: 520px;
+  background-image: url(/assets/Img/bgfl.png);
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+}
+.sectionOne .container .innerWrap .innerContent {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  line-height: 2em;
+}
+.sectionOne .container .innerWrap .innerContent .image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.sectionOne .container .innerWrap .innerContent .image p {
+  padding: 5px 20px 0;
+  font-style: italic;
+}
+.sectionOne .container .innerWrap .innerContent .image img {
+  width: 250px;
+  border-radius: 50%;
+}
+
+.sectionOne .container .innerWrap .innerContent .title {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+.sectionOne .container .innerWrap .innerContent .desc {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+.sectionOne .container .innerWrap .innerImg {
+  width: 50%;
+  background: url(/assets/Img/code.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .sectionOne .container {
+    height: 500px;
+    margin-top: 30px;
+  }
+  .sectionOne .container .innerWrap .innerContent .image img {
+    width: 200px;
+  }
+  .sectionOne .container .innerWrap .innerContent::after {
+    display: none;
+  }
+}
+
+/* --------------------------max width 768px --------------------------*/
+
+@media screen and (max-width: 768px) {
+  .sectionOne .container {
+    height: 500px;
+    margin-top: 40px;
+  }
+  .sectionOne .container .innerWrap .innerImg {
+    display: none;
+  }
+  .sectionOne .container .innerWrap .innerContent {
+    width: 100%;
+  }
+  .sectionOne .container .innerWrap .innerContent .title {
+    font-size: 1.5em;
+  }
+  .sectionOne .container .innerWrap .innerContent .desc {
+    font-size: 1em;
+  }
+}
+
+/*---------------------------------------------End SectionOne ------------------------------------*/
+
+/*------------------------------------------Start SectionTwo --------------------------------------*/
+.sectionTwo .container {
+  height: 1000px;
+}
+.sectionTwo .container .innerWrap {
+  position: relative;
+}
+.sectionTwo .container .innerWrap::before {
+  content: "";
+  width: 425px;
+  height: 520px;
+  background-image: url(/assets/Img/bgfl.png);
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.4;
+}
+.sectionTwo .container .innerWrap::after {
+  content: "";
+  width: 425px;
+  height: 520px;
+  background-image: url(/assets/Img/bgfl.png);
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+}
+.sectionTwo .container .innerWrap .innerTitle {
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  margin: 1em 0 2.5em;
+  background-color: var(--bgTwo);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.sectionTwo .container .innerWrap .innerContent .hobby {
+  width: 90%;
+  height: 150px;
+  margin: 0 auto 100px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sectionTwo .container .innerWrap .innerContent .travel .image {
+  text-align: end;
+  order: 2;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image {
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image::before,
+.sectionTwo .container .innerWrap .innerContent .hobby .image::after {
+  content: "";
+  height: 200%;
+  width: 60px;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  position: absolute;
+  top: -50%;
+  transform: rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: all 5s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 2;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image::before {
+  left: 180%;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image::after {
+  left: -289px;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image:hover:before {
+  left: -289px;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image:hover:after {
+  left: 180%;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image {
+  transition: all 0.7s ease 0s;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image:hover {
+  transform: scale(1.1);
+  border-radius: 10px;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .image img {
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .content {
+  width: 70%;
+  margin: 0 20px;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .content .title {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.sectionTwo .container .innerWrap .innerContent .hobby .content .desc {
+  font-style: italic;
+}
+
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .sectionTwo .container .innerWrap .innerContent .hobby .content {
+    width: 50%;
+    margin: 0 20px;
+  }
+  .sectionTwo .container .innerWrap .innerContent .travel {
+    justify-content: space-evenly;
+  }
+  .sectionTwo .container .innerWrap .innerContent .travel .content {
+    text-align: end;
+  }
+}
+
+/* --------------------------max width 768px --------------------------*/
+
+@media screen and (max-width: 768px) {
+  .sectionTwo .container {
+    height: 2000px;
+  }
+  .sectionTwo .container .innerWrap .innerTitle {
+    font-size: 1.7em;
+    margin-bottom: 1.5em;
+  }
+  .sectionTwo .container .innerWrap .innerContent .hobby {
+    flex-direction: column;
+  }
+  .sectionTwo .container .innerWrap .innerContent .hobby {
+    width: 100%;
+    height: 580px;
+    justify-content: space-evenly;
+    margin: 0 0 30px;
+  }
+  .sectionTwo .container .innerWrap .innerContent .hobby .image {
+    text-align: center;
+  }
+  .sectionTwo .container .innerWrap .innerContent .hobby .content {
+    width: 80%;
+    margin: 0 20px;
+    text-align: center;
+  }
+  .sectionTwo .container .innerWrap .innerContent .travel .image {
+    order: 0;
+  }
+  .sectionTwo .container .innerWrap .innerContent .hobby .content .title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+}
+/*---------------------------------------------End SectionTwo ------------------------------------*/
+
+/*---------------------------------------------Start SectionThree ------------------------------------*/
+
+.sectionThree .container {
+  height: 1200px;
+}
+.sectionThree .container .innerWrap {
+  position: relative;
+}
+.sectionThree .container .innerWrap::before {
+  content: "";
+  width: 420px;
+  height: 445px;
+  background-image: url(/assets/Img/bgfl.png);
+  transform: rotate(270deg);
+  position: absolute;
+  left: 0;
+  top: -10px;
+  opacity: 0.4;
+}
+.sectionThree .container .innerWrap::after {
+  content: "";
+  width: 420px;
+  height: 445px;
+  background-image: url(/assets/Img/bgfl.png);
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  opacity: 0.4;
+}
+.sectionThree .container .innerWrap .innerTitle {
+  text-align: center;
+  margin: 2.5em 0 1em;
+  font-size: 2.5em;
+  font-weight: 800;
+  position: relative;
+}
+.sectionThree .container .innerWrap .innerTitle::after {
+  content: "";
+  width: 100px;
+  height: 140px;
+  background: url(/assets/Img/bu.png) no-repeat;
+  position: absolute;
+  bottom: -20px;
+}
+.sectionThree .container .innerWrap .innerContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.sectionThree .container .innerWrap .innerContent::after {
+  content: "";
+  background-image: url(/assets/Img/gau.png);
+  position: absolute;
+  width: 300px;
+  height: 425px;
+  left: 50px;
+  bottom: 190px;
+}
+.sectionThree .container .innerWrap .innerContent .innerL {
+  width: 50%;
+}
+.sectionThree .container .innerWrap .innerContent .innerR {
+  width: 50%;
+}
+.sectionThree .container .innerWrap .innerContent .innerL .item {
+  border-right: 5px solid black;
+  padding-right: 20px;
+  padding-left: 50px;
+  height: 250px;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  position: relative;
+  font-style: italic;
+}
+
+.sectionThree .container .innerWrap .innerContent .innerR .item {
+  padding-left: 20px;
+  padding-right: 50px;
+  height: 250px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-style: italic;
+}
+.sectionThree .container .innerWrap .innerContent .innerL :nth-child(2) {
+  padding-top: 60px;
+}
+.sectionThree .container .innerWrap .innerContent .innerL :nth-child(3) {
+  padding-top: 0px;
+}
+.sectionThree .container .innerWrap .innerContent .innerL :nth-child(4) {
+  padding-top: 0px;
+  height: 100px;
+}
+.sectionThree .container .innerWrap .innerContent .item:nth-child(4):before {
+  content: "";
+  border-top: 20px solid black;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: calc(100% - 7.5px);
+  top: 100%;
+}
+.sectionThree .container .innerWrap .innerContent .innerR :nth-child(1) {
+  padding-top: 140px;
+}
+.sectionThree .container .innerWrap .innerContent .innerR :nth-child(2) {
+  padding-top: 100px;
+}
+.sectionThree .container .innerWrap .innerContent .innerR :nth-child(3) {
+  padding-top: 0px;
+}
+
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .sectionThree .container .innerWrap .innerContent::after {
+    display: none;
+  }
+}
+/* --------------------------max width 768px --------------------------*/
+
+@media screen and (max-width: 768px) {
+  .sectionThree .container .innerWrap .innerTitle {
+    font-size: 1.7em;
+  }
+}
+/*---------------------------------------------End SectionThree ------------------------------------*/
+
+/*---------------------------------------------Start SectionFour ------------------------------------*/
+.sectionFour .container {
+  height: 1000px;
+}
+.sectionFour .container .innerWrap {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.sectionFour .container .innerWrap .innerTitle {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 100px 0 50px;
+  position: relative;
+}
+.sectionFour .container .innerWrap .innerTitle::after {
+  content: "";
+  background-image: url(/assets/Img/title\ gau.png);
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -96px;
+  right: calc(50% - 100px);
+}
+
+.sectionFour .container .innerWrap .innerContent .innerBox {
+  width: 100%;
+  height: 400px;
+  border-radius: 6px;
+  position: relative;
+  transition: 0.7s ease;
+  display: flex;
+  justify-content: center;
+}
+.sectionFour .container .innerWrap .innerContent .innerBox label {
+  width: 150px;
+}
+
+.sectionFour .container .innerWrap .innerContent .innerBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sectionFour .container .innerWrap .innerContent .innerBox input {
+  display: none;
+}
+.sectionFour .container .innerWrap .innerContent .innerBox label {
+  position: relative;
+}
+.sectionFour .container .innerWrap .innerContent .innerBox label h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+  position: absolute;
+  left: 1%;
+  top: 200px;
+  transform: rotate(270deg);
+  color: var(--colorThree);
+}
+
+.sectionFour .container .innerWrap .innerContent .innerBox label h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  position: absolute;
+  left: 5%;
+  bottom: 50px;
+  color: var(--colorThree);
+  display: none;
+}
+#la3,
+#la4 {
+  height: 450px;
+}
+#la1 {
+  height: 500px;
+}
+.sectionFour .container .innerWrap .innerContent .innerBox #two:checked ~ #la2,
+#three:checked ~ #la3,
+#one:checked ~ #la1,
+#four:checked ~ #la4,
+#five:checked ~ #la5 {
+  width: 500px;
+  transition: 0.7s ease;
+}
+#two:checked ~ #la2 h2,
+#three:checked ~ #la3 h2,
+#one:checked ~ #la1 h2,
+#four:checked ~ #la4 h2,
+#five:checked ~ #la5 h2 {
+  display: none;
+}
+#two:checked ~ #la2 h3,
+#three:checked ~ #la3 h3,
+#one:checked ~ #la1 h3,
+#four:checked ~ #la4 h3,
+#five:checked ~ #la5 h3 {
+  display: block;
+}
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+
+@media screen and (max-width: 1024px) {
+  .sectionFour .container {
+    height: 800px;
+  }
+  .sectionFour .container .innerWrap .innerContent .innerBox {
+    height: 315px;
+  }
+  #la1 {
+    height: 385px;
+  }
+  #la3,
+  #la4 {
+    height: 350px;
+  }
+}
+
+/* --------------------------max width 768px --------------------------*/
+
+@media screen and (max-width: 768px) {
+  .sectionFour .container .innerWrap .innerTitle {
+    font-size: 1.7em;
+    padding-top: 12px;
+  }
+}
+/* --------------------------max width 480px --------------------------*/
+
+@media screen and (max-width: 480px) {
+  .sectionFour .container {
+    height: 450px;
+  }
+  .sectionFour .container .innerWrap .innerContent .innerBox {
+    height: 130px;
+  }
+  #la1 {
+    height: 185px;
+  }
+  #la3,
+  #la4 {
+    height: 150px;
+  }
+  .sectionFour .container .innerWrap .innerContent .innerBox label h3 {
+    font-size: 1em;
+    left: 4%;
+    bottom: 26px;
+  }
+  .sectionFour .container .innerWrap .innerContent .innerBox label h2 {
+    font-size: 0.7em;
+    left: -19%;
+    top: 75px;
+  }
+}
+/*---------------------------------------------End SectionFour ------------------------------------*/
+
+/*---------------------------------------------- Start Footer -------------------------------------*/
+footer .container {
+  background-color: var(--bgTwo);
+  height: 500px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+footer .container::after {
+  content: "";
+  background: url(/assets/Img/footer\ gau.png) no-repeat;
+  position: absolute;
+  width: 145px;
+  height: 65px;
+  bottom: 490px;
+  right: 20%;
+}
+footer .container::before {
+  content: "";
+  background: url(/assets/Img/bf.png) no-repeat;
+  width: 320px;
+  height: 370px;
+  position: absolute;
+  bottom: 85%;
+  left: 5%;
+}
+footer .container .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+footer .container .contact .item {
+  display: flex;
+  align-items: center;
+  border-right: 3px solid black;
+}
+footer .container .contact i {
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 0 10%;
+}
+
+footer .container .social {
+  width: 50%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container .social i {
+  font-size: 45px;
+}
+footer .container .social .fb i {
+  color: blue;
+}
+footer .container .social .ins i {
+  font-size: 40px;
+  background-image: linear-gradient(45deg, #ee823d, #b838a9, #604ae7, #eb5c46);
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+footer .container .social .tik i {
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+.social .line i {
+  color: #06c152;
+}
+footer .scroll a {
+  transition: 5s ease-in;
+}
+footer .scroll a i {
+  font-size: 25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #dad1d1;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2%;
+  bottom: 15%;
+  z-index: 1000;
+}
+
+/*------------------------------------------------------ reponsive ------------------------------------*/
+
+/* --------------------------max width 1024px --------------------------*/
+
+@media screen and (max-width: 1024px) {
+  footer .container .contact i {
+    padding-left: 20px;
+  }
+  footer .container .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8em;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  footer .container .contact .item {
+    border-right: none;
+  }
+
+  /* --------------------------max width 480px --------------------------*/
+
+  @media screen and (max-width: 480px) {
+    footer .container::before {
+      display: none;
+    }
+  }
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .container .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8em;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  footer .container .contact i {
+    padding-left: 5px;
+  }
+  footer .container .contact .item {
+    border-right: none;
+  }
+  footer .container .social i {
+    font-size: 30px;
+  }
+  footer .container .social .ins i {
+    font-size: 30px;
+    width: 35px;
+    height: 35px;
+  }
+  footer .container .social .tik i {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+/*----------------------------------------------- End Footer --------------------------------------*/
